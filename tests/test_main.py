@@ -1,9 +1,13 @@
 import copy
-from collections import Mapping
 from functools import partial
 import six
 import os.path
 import sys
+
+try:
+    from collections import Mapping
+except ImportError:
+    from collections.abc import Mapping
 
 from fudge import Fake, patched_context
 from nose.tools import ok_, eq_
